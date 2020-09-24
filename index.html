@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="main.css">
-    <script src="main.js"></script>
     <title>A Counter</title>
 </head>
 <body>
@@ -23,12 +22,18 @@
         <button onclick="darkMode()"class="dark">Darkmode</button>
         <button onclick="lightMode()"class="light">Lightmode</button>
     </div>
+    <div class="modes">
+        <button onclick="restart()"class="light restart-btn">RESTART</button>
+    </div>
 
 </div>
+</body>
 
 <script>
 let increaseBtn = document.querySelector('.increase')
 let decreaseBtn = document.getElementsByClassName('decrease')
+let restartBtn = document.querySelector('.restart-btn')
+
 let outputBox = document.querySelector('.output-section')
 let nombre = Number(outputBox.textContent)
 
@@ -45,6 +50,11 @@ function Increaser(e){
         numberColor()
 
 }
+function restart(e){
+        nombre = 0
+        outputBox.textContent = nombre
+        numberColor()
+}
 function numberColor(){
     if(nombre < 0){
         outputBox.style.color = 'red'
@@ -52,7 +62,7 @@ function numberColor(){
     else if(nombre > 0){
         outputBox.style.color = 'rgb(15,234,17)'
     }else{
-        outputBox.style.color = 'darkblue'
+        outputBox.style.color = '#311'
     }
 
 }
@@ -70,5 +80,4 @@ function lightMode(e){
 }
 </script>
 
-</body>
 </html>
